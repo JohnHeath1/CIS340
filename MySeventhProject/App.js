@@ -1,20 +1,50 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, {Component} from 'react';
+import { StyleSheet, Text, View, Button } from 'react-native';
 
-export default function App() {
+export default class TouchableButton extends Component{
+  
+  onPressButton(){
+    alert("You tapped a button")
+  }
+  render(){
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      
+    <View style={styles.containerButton}>
+    <Button
+    onPress={this._onPressButton}
+    title="Press button 1"
+    />
     </View>
-  );
-}
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+    <View style={styles.containerLayoutButton}>
+
+      <Button
+          onPress={this._onPressButton}
+          title="Press button 2"
+      />
+
+
+      <Button
+          onPress={this._onPressButton}
+          title="Great"
+          color="green"
+      />
+
+      </View>
+
+
+
+    <View style = {styles.containerButton}>
+
+    <Button
+    onPress={this._onPressButton}
+    title="Tap me!"
+    />
+    </View>
+
+
+  );
+
+
+
